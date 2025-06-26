@@ -81,14 +81,12 @@
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-6">Contact & Réservation</h2>
     <p class="mb-6">Tu veux une ambiance unique pour ton événement ? Contacte-moi :</p>
-    <!-- Formulaire mailto + redirection -->
-    <form onsubmit="window.location.href='merci.html';" 
-          action="mailto:lafontyohan@gmail.com?subject=Message%20depuis%20monsite" 
-          method="post" enctype="text/plain" class="grid gap-4 max-w-md mx-auto">
-      <input type="text" name="Nom" placeholder="Nom" required class="p-3 border border-gray-300 rounded-md">
-      <input type="email" name="Email" placeholder="Email" required class="p-3 border border-gray-300 rounded-md">
-      <textarea name="Message" placeholder="Message / Type d’événement" required
-        class="p-3 border border-gray-300 rounded-md"></textarea>
+    <form action="https://formspree.io/f/xldnoykr" method="POST" class="grid gap-4 max-w-md mx-auto">
+      <!-- Champ caché pour redirection vers merci.html après soumission -->
+      <input type="hidden" name="_next" value="merci.html">
+      <input type="text" name="nom" placeholder="Nom" required class="p-3 border border-gray-300 rounded-md">
+      <input type="email" name="email" placeholder="Email" required class="p-3 border border-gray-300 rounded-md">
+      <textarea name="message" placeholder="Message / Type d’événement" required class="p-3 border border-gray-300 rounded-md"></textarea>
       <button type="submit" class="bg-pink-600 text-white font-bold py-3 rounded-md hover:bg-pink-700 transition">
         Envoyer
       </button>
